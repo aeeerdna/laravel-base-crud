@@ -31,6 +31,23 @@
             </p>
         </div>
 
+        {{-- tipologia, serie e data --}}
+        <div>
+            {{-- tipo --}}
+            <p>
+                {{ $comic->type }}
+            </p>
+
+            {{-- serie --}}
+            <p>
+                {{ $comic->series }}
+            </p>
+
+            {{-- data --}}
+            <p>
+                {{ $comic->sale_date }}
+            </p>
+        </div>
     </main>
 </body>
 </html>
