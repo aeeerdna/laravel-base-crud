@@ -8,17 +8,18 @@
 </head>
 <body>
     @foreach ($comics as $comic)
+        {{-- link a fumetto --}}
         <div>
             <a href="{{ route('comics.show', $comic->id) }}">
                 {{ $comic->title }}
             </a>
+        </div>
 
-            <form method="POST" action="{{ route('comics.destroy', $comic->id) }}">
-                @csrf
-                @method('DELETE')
-
-                <input type="submit" value="Delete">
-            </form>
+        {{-- elimina risorsa --}}
+        <div>
+            <a href="{{ route('comics.confirm-delete', $comic->id) }}">
+                Delete
+            </a>
         </div>
     @endforeach
 </body>
