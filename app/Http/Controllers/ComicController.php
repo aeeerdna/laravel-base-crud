@@ -95,4 +95,13 @@ class ComicController extends Controller
         $comic->delete();
         return redirect()->route('comics.index');
     }
+
+    /**
+     * Are you sure to delete the new resource?
+     *
+    */
+    public function confirmDelete(Comic $comic)
+    {
+        return view('comics.confirm-delete', compact('comic'));
+    }
 }
