@@ -48,6 +48,10 @@
                 {{ $comic->sale_date }}
             </p>
         </div>
+
+        <div>
+            <a href="{{ route('comics.edit', $comic->id) }}">Edit</a>
+        </div>
     </main>
 </body>
 </html>
