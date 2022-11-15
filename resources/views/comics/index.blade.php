@@ -22,5 +22,13 @@
             </a>
         </div>
     @endforeach
+
+
+    {{-- aggiungi risorsa --}}
+    <div>
+        <a href="{{ route('comics.create', $comic->id) }}">
+            Add
+        </a>
+    </div>
 </body>
 </html>
