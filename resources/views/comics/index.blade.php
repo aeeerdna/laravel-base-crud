@@ -26,7 +26,7 @@
 
     {{-- aggiungi risorsa --}}
     <div>
-        <a href="{{ route('comics.create', $comic->id) }}">
+        <a href="{{ route('comics.create') }}">
             Add
         </a>
     </div>
