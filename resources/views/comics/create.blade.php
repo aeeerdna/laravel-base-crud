@@ -22,7 +22,7 @@
 
             {{-- input title --}}
             <div @error('title') class="is-invalid" @enderror>
-                <input type="text" name="title" placeholder="Title here..." required maxlength="255">
+                <input type="text" name="title" value="{{ old('title', '') }}" placeholder="Title here..." minlength="3" required maxlength="255">
 
                 {{-- messaggio eventuale errore nel titolo --}}
                 @error('title')
@@ -34,7 +34,7 @@
 
             {{-- input description --}}
             <div @error('description') class="is-invalid" @enderror>
-                <textarea name="description" cols="25" rows="10" placeholder="Description here..." required></textarea>
+                <textarea name="description" cols="25" rows="10" placeholder="Description here..." required>{{ old('description', '') }}</textarea>
 
                 {{-- messaggio eventuale errore nella descrizione --}}
                 @error('description')
@@ -46,7 +46,7 @@
 
             {{-- input thumb --}}
             <div @error('thumb') class="is-invalid" @enderror>
-                <input type="url" name="thumb" placeholder="Thumb link here..." pattern="https://.*" required maxlength="255">
+                <input type="url" name="thumb" value="{{ old('thumb', '') }}" placeholder="Thumb link here..." pattern="https://.*" required maxlength="255">
 
                 {{-- messaggio eventuale errore nell'immagine --}}
                 @error('thumb')
@@ -58,7 +58,7 @@
 
             {{-- input price --}}
             <div @error('price') class="is-invalid" @enderror>
-                <input type="number" name="price" placeholder="Price here..." required min="0.01" max="999.99" step="0.01">
+                <input type="number" name="price" value="{{ old('price', '') }}" placeholder="Price here..." required min="0.01" max="999.99" step="0.01">
 
                 {{-- messaggio eventuale errore nel prezzo --}}
                 @error('price')
@@ -70,7 +70,7 @@
 
             {{-- input series --}}
             <div @error('series') class="is-invalid" @enderror>
-                <input type="text" name="series" placeholder="Series here..." required maxlength="100">
+                <input type="text" name="series" value="{{ old('series', '') }}" placeholder="Series here..." required maxlength="100">
 
                 {{-- messaggio eventuale errore nelle serie --}}
                 @error('series')
@@ -82,7 +82,7 @@
 
             {{-- input sale_date --}}
             <div @error('sale_date') class="is-invalid" @enderror>
-                <input type="date" name="sale_date" placeholder="Sale date here..." required>
+                <input type="date" name="sale_date" value="{{ old('sale_date', '') }}" placeholder="Sale date here..." required>
 
                 {{-- messaggio eventuale errore nella data --}}
                 @error('sale_date')
@@ -94,7 +94,7 @@
 
             {{-- input type --}}
             <div @error('type') class="is-invalid" @enderror>
-                <input type="text" name="type" placeholder="Type here..." required maxlength="15">
+                <input type="text" name="type" value="{{ old('type', '') }}" placeholder="Type here..." required maxlength="15">
 
                 {{-- messaggio eventuale errore nel tipo --}}
                 @error('type')
