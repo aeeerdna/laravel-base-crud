@@ -8,6 +8,13 @@
 </head>
 <body>
     <main>
+        {{-- visualizzare errori --}}
+        @if ($errors->any())
+            <div>
+                You must correct the errors before continuing!!
+            </div>
+        @endif
+
         <form method="POST" action=" {{ route('comics.store') }} ">
             {{-- validazione richiesta utente --}}
             @csrf
@@ -15,6 +22,13 @@
             {{-- input title --}}
             <div>
                 <input type="text" name="title" placeholder="Title here..." required maxlength="255">
+
+                {{-- messaggio eventuale errore nel titolo --}}
+                @error('title')
+                    <div>
+                        Fix the title!!
+                    </div>
+                @enderror
             </div>
 
             {{-- input description --}}
@@ -29,7 +43,7 @@
 
             {{-- input price --}}
             <div>
-                <input type="number" name="price" placeholder="Price here..." required>
+                <input type="number" name="price" placeholder="Price here..." required min="0.01" max="999.99" step="0.01">
             </div>
 
             {{-- input series --}}
