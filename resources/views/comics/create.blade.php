@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>New Comics</title>
 </head>
 <body>
@@ -20,8 +21,8 @@
             @csrf
 
             {{-- input title --}}
-            <div>
-                <input type="text" name="title" placeholder="Title here..." required maxlength="255">
+            <div @error('title') class="is-invalid" @enderror>
+                <input type="text" name="title" placeholder="Title here...">
 
                 {{-- messaggio eventuale errore nel titolo --}}
                 @error('title')
