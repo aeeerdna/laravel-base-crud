@@ -22,7 +22,7 @@
 
             {{-- input title --}}
             <div @error('title') class="is-invalid" @enderror>
-                <input type="text" name="title" placeholder="Title here...">
+                <input type="text" name="title" placeholder="Title here..." required maxlength="255">
 
                 {{-- messaggio eventuale errore nel titolo --}}
                 @error('title')
